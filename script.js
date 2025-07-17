@@ -99,4 +99,75 @@ sectors.forEach((sector, idx) => {
   });
 
   container.appendChild(section);
+});
+
+// Sidebar navigation logic
+const sidebarLinks = document.querySelectorAll('.sidebar ul li a');
+const sections = document.querySelectorAll('.main-section');
+
+// Gallery Lightbox functionality
+const galleryImages = document.querySelectorAll('.gallery-img');
+const lightboxModal = document.getElementById('lightbox-modal');
+const lightboxContent = document.querySelector('.lightbox-content');
+const lightboxClose = document.querySelector('.lightbox-close');
+
+if (galleryImages.length && lightboxModal) {
+  galleryImages.forEach(img => {
+    img.onclick = function() {
+      lightboxContent.src = this.src;
+      lightboxContent.alt = this.alt;
+      lightboxModal.style.display = 'flex';
+    };
+  });
+}
+if (lightboxClose && lightboxModal) {
+  lightboxClose.onclick = function() {
+    lightboxModal.style.display = 'none';
+    lightboxContent.src = '';
+  };
+}
+if (lightboxModal) {
+  lightboxModal.onclick = function(e) {
+    if (e.target === lightboxModal) {
+      lightboxModal.style.display = 'none';
+      lightboxContent.src = '';
+    }
+  };
+}
+
+sidebarLinks.forEach(link => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+    const targetId = this.getAttribute('href').replace('#', '');
+    sections.forEach(section => {
+      // Remove show-section from all
+      section.classList.remove('show-section');
+      // Add show-section only to the target
+      if (section.id === targetId) {
+        section.classList.add('show-section');
+      }
+    });
+    // Highlight active link
+    sidebarLinks.forEach(l => l.classList.remove('active'));
+    this.classList.add('active');
+    // Always scroll to top of main-content
+    document.querySelector('.main-content').scrollTo({ top: 0, behavior: 'auto' });
+    // If Sectors section, also scroll window to top to avoid offset
+    if (targetId === 'sectors') {
+      window.scrollTo({ top: 0, behavior: 'auto' });
+    }
+    // Re-setup gallery lightbox in case gallery section is now visible
+    setupGalleryLightbox();
+  });
+});
+// On page load, show Home section with fade-in
+window.addEventListener('DOMContentLoaded', () => {
+  sections.forEach(section => {
+    if(section.id === 'home') {
+      section.classList.add('show-section');
+    } else {
+      section.classList.remove('show-section');
+    }
+  });
+  setupGalleryLightbox();
 }); 
