@@ -6,129 +6,176 @@
     <title>Construction & Infrastructure Across Sectors</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-      .sidebar {
-        width: 220px;
-        background-color: #1b263b;
-        color: #e0e1dd;
-        height: 100vh;
-        padding: 20px;
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 1000;
-      }
-      .sidebar h2 {
-        font-size: 1.5rem;
-        margin-bottom: 1rem;
-        color: #e0e1dd;
-      }
-      .sidebar ul {
-        list-style-type: none;
-        padding: 0;
-      }
-      .sidebar ul li {
-        margin: 15px 0;
-      }
-      .sidebar ul li a {
-        color: #e0e1dd;
-        text-decoration: none;
-        font-weight: 500;
-        display: block;
-      }
-      .sidebar ul li a:hover {
-        color: #778da9;
-      }
-      .main-content {
-        margin-left: 240px;
-        padding: 20px;
-      }
-    </style>
 </head>
 <body>
-    <!-- Sidebar Navigation  -->
-    <div class="sidebar">
-      <h2>🏗️ Infra Portal</h2>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#sectors">Sectors</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#submit">Submit</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </div>
-    <!-- Anchor targets for sidebar navigation -->
-    <div id="home"></div>
-    <div id="services"></div>
-    <div id="about"></div>
-    <div id="gallery"></div>
-    <div id="submit"></div>
-    <div id="contact"></div>
-    <div class="main-content">
-      <section id="home" class="main-section show-section">
-        <h1>Welcome to Infra Portal</h1>
-        <p>Explore India's Construction & Infrastructure Sectors. Discover projects, view galleries, submit your own, and more!</p>
-      </section>
-      <section id="services" class="main-section">
-        <h1>Our Services</h1>
-        <ul>
-          <li><strong>Project Consultancy:</strong> Expert advice for your construction needs.</li>
-          <li><strong>Construction Management:</strong> End-to-end project management solutions.</li>
-          <li><strong>Infrastructure Planning:</strong> Strategic planning for sustainable growth.</li>
-          <li><strong>Quality Assurance:</strong> Ensuring top-notch standards in every project.</li>
-          <li><strong>Project Submission:</strong> Showcase your project on our platform.</li>
-        </ul>
-      </section>
-      <section id="about" class="main-section">
-        <h1>About Us</h1>
-        <p>Infra Portal is dedicated to showcasing India's diverse construction and infrastructure landscape.</p>
-      </section>
-      <section id="sectors" class="main-section">
-        <h1>Construction & Infrastructure Across Sectors</h1>
-        <div class="sections-container">
-          <!-- Sectors will be injected by JS -->
+    <!-- Top Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>🏗️ Infra Portal</h2>
+            </div>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#sectors" class="nav-link">Sectors</a>
+                <a href="#gallery" class="nav-link">Gallery</a>
+                <a href="#submit" class="nav-link">Submit</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
-      </section>
-      <section id="gallery" class="main-section">
-        <h1>Gallery</h1>
-        <div class="gallery-grid">
-          <img src="images/img_1.webp" alt="Gallery 1" class="gallery-img">
-          <img src="images/img_2.jpg" alt="Gallery 2" class="gallery-img">
-          <img src="images/img_3.jpg" alt="Gallery 3" class="gallery-img">
-          <img src="images/img_4.webp" alt="Gallery 4" class="gallery-img">
-          <img src="images/img_5.webp" alt="Gallery 5" class="gallery-img">
-          <img src="images/img_6.jpg" alt="Gallery 6" class="gallery-img">
-        </div>
-      </section>
-      <section id="submit" class="main-section">
-        <h1>Submit Your Project</h1>
-        <form>
-          <label>Name:<br><input type="text" name="name" required></label><br><br>
-          <label>Email:<br><input type="email" name="email" required></label><br><br>
-          <label>Project Title:<br><input type="text" name="title" required></label><br><br>
-          <label>Description:<br><textarea name="description" rows="4" required></textarea></label><br><br>
-          <label>Image:<br><input type="file" name="image"></label><br><br>
-          <button type="submit">Submit</button>
-        </form>
-      </section>
-      <section id="contact" class="main-section">
-        <h1>Contact Us</h1>
-        <p>Email: info@infraportal.com<br>Phone: +91-12345-67890<br>Address: Mumbai, India</p>
-        <form>
-          <label>Your Name:<br><input type="text" name="contact_name" required></label><br><br>
-          <label>Your Email:<br><input type="email" name="contact_email" required></label><br><br>
-          <label>Message:<br><textarea name="message" rows="4" required></textarea></label><br><br>
-          <button type="submit">Send</button>
-        </form>
-      </section>
-      <!-- Lightbox Modal for Gallery -->
-      <div id="lightbox-modal" class="lightbox-modal" style="display:none;">
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Home Section -->
+        <section id="home" class="main-section">
+            <div class="section-content">
+                <h1>Welcome to Infra Portal</h1>
+                <p>Explore India's Construction & Infrastructure Sectors. Discover projects, view galleries, submit your own, and more!</p>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="main-section">
+            <div class="section-content">
+                <h1>Our Services</h1>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <i class="fas fa-clipboard-list"></i>
+                        <h3>Project Consultancy</h3>
+                        <p>Expert advice for your construction needs.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-cogs"></i>
+                        <h3>Construction Management</h3>
+                        <p>End-to-end project management solutions.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-drafting-compass"></i>
+                        <h3>Infrastructure Planning</h3>
+                        <p>Strategic planning for sustainable growth.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-award"></i>
+                        <h3>Quality Assurance</h3>
+                        <p>Ensuring top-notch standards in every project.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-upload"></i>
+                        <h3>Project Submission</h3>
+                        <p>Showcase your project on our platform.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="main-section">
+            <div class="section-content">
+                <h1>About Us</h1>
+                <p>Infra Portal is dedicated to showcasing India's diverse construction and infrastructure landscape. We connect builders, architects, and infrastructure enthusiasts to create a comprehensive platform for sharing knowledge and innovations in the construction industry.</p>
+                <p>Our mission is to promote sustainable development and showcase the incredible infrastructure projects that are shaping India's future.</p>
+            </div>
+        </section>
+
+        <!-- Sectors Section -->
+        <section id="sectors" class="main-section">
+            <div class="section-content">
+                <h1>Construction & Infrastructure Across Sectors</h1>
+                <div class="sections-container">
+                    <!-- Sectors will be injected by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="main-section">
+            <div class="section-content">
+                <h1>Gallery</h1>
+                <div class="gallery-grid">
+                    <img src="images/img_1.webp" alt="Gallery 1" class="gallery-img">
+                    <img src="images/img_2.jpg" alt="Gallery 2" class="gallery-img">
+                    <img src="images/img_3.jpg" alt="Gallery 3" class="gallery-img">
+                    <img src="images/img_4.webp" alt="Gallery 4" class="gallery-img">
+                    <img src="images/img_5.webp" alt="Gallery 5" class="gallery-img">
+                    <img src="images/img_6.jpg" alt="Gallery 6" class="gallery-img">
+                </div>
+            </div>
+        </section>
+
+        <!-- Submit Section -->
+        <section id="submit" class="main-section">
+            <div class="section-content">
+                <h1>Submit Your Project</h1>
+                <form class="submit-form">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="title">Project Title:</label>
+                        <input type="text" id="title" name="title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Description:</label>
+                        <textarea id="description" name="description" rows="4" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="image">Image:</label>
+                        <input type="file" id="image" name="image" accept="image/*">
+                    </div>
+                    <button type="submit">Submit Project</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="main-section">
+            <div class="section-content">
+                <h1>Contact Us</h1>
+                <div class="contact-info">
+                    <div class="contact-details">
+                        <h3>Get in Touch</h3>
+                        <p><i class="fas fa-envelope"></i> info@infraportal.com</p>
+                        <p><i class="fas fa-phone"></i> +91-12345-67890</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Mumbai, India</p>
+                    </div>
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <label for="contact_name">Your Name:</label>
+                            <input type="text" id="contact_name" name="contact_name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact_email">Your Email:</label>
+                            <input type="email" id="contact_email" name="contact_email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message:</label>
+                            <textarea id="message" name="message" rows="4" required></textarea>
+                        </div>
+                        <button type="submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Lightbox Modal for Gallery -->
+    <div id="lightbox-modal" class="lightbox-modal">
         <span class="lightbox-close">&times;</span>
         <img class="lightbox-content" src="" alt="Large Preview">
-      </div>
-      <script src="script.js"></script>
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
